@@ -14,7 +14,6 @@ public class Craps {
             int die2 = rnd.nextInt(6) + 1;
             int sum = die1 + die2;
 
-
             //Print the table with die and sum
             System.out.println("Die 1\t Die 2\t\t Sum");
             System.out.println(die1 + "\t\t " + die2 + "\t\t\t " + sum);
