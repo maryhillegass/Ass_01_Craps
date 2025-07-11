@@ -13,7 +13,6 @@ public class Craps {
             int die1 = rnd.nextInt(6) + 1;
             int die2 = rnd.nextInt(6) + 1;
             int sum = die1 + die2;
-            //
 
 
             //Print the table with die and sum
