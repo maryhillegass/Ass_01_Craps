@@ -13,6 +13,7 @@ public class Craps {
             int die1 = rnd.nextInt(6) + 1;
             int die2 = rnd.nextInt(6) + 1;
             int sum = die1 + die2;
+            int point = sum;
 
             //Print the table with die and sum
             System.out.println("Die 1\t Die 2\t\t Sum");
@@ -20,22 +21,30 @@ public class Craps {
 
             if(sum == 2 || sum == 3 || sum ==12){
                 //crapping out
-                System.out.println("You crapped out with a " + sum);
+                System.out.println("You crapped out with a " + sum +"!");
             } else if (sum == 7 || sum == 11) {
                 //natural win
-                System.out.println("You got a natural win with "+ sum);
+                System.out.println("You got a natural win with "+ sum + "!");
             }else{
                 do{
                     //Roll until sum == point or 7
                     done = false;
-                    int point = sum;
+
                     die1 = rnd.nextInt(6) + 1;
                     die2 = rnd.nextInt(6) + 1;
                     sum = die1 + die2;
                     //display new die roll
                     System.out.println(die1 + "\t\t " + die2 + "\t\t\t " + sum);
 
-                }while (!done)
+                    if (sum == 7){
+                        System.out.println("You lost! You rolled a seven!");
+                        done = true;
+                    } else if (sum == point) {
+                        System.out.println("You won! You rolled the point, " + point + "!");
+                        done = true;
+                    }
+
+                }while (!done);
             }
 
 
@@ -43,7 +52,7 @@ public class Craps {
             do{
                 done = false;
                 //Prompt
-                System.out.print("Would you like to play again [Y/N]: ");
+                System.out.print("Would you like to play again? [Y/N]: ");
                 //Input
                 playAgain = in.nextLine();
                 //Check for Y/N
