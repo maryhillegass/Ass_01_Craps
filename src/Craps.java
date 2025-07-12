@@ -34,6 +34,8 @@ public class Craps {
                     die2 = rnd.nextInt(6) + 1;
                     sum = die1 + die2;
                     //display new die roll
+                    System.out.println("Trying for point...");
+                    System.out.println("Die 1\t Die 2\t\t Sum");
                     System.out.println(die1 + "\t\t " + die2 + "\t\t\t " + sum);
 
                     if (sum == 7){
